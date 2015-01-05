@@ -57,7 +57,7 @@ public class Persona {
 	}
 
 	public String toString() {
-		return this.dni + "," + this.nom + "," + this.cognom1 + ","
-				+ this.cognom2 + "," + this.edat;
+		return this.dni + ";" + this.nom + ";" + this.cognom1 + ";"
+				+ this.cognom2 + ";" + this.edat;
 	}
 }

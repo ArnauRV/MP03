@@ -310,7 +310,7 @@ public class Controlador {
 
 					// Guardo les dades de les persones a un array separant-les
 					// per la coma que hi ha entre les dades de cada persona
-					String[] dades = linia.split(",");
+					String[] dades = linia.split(";");
 
 					// Afegeixo la persona amb les seves dades
 					model.add(new Persona(dades[0], dades[1], dades[2],
