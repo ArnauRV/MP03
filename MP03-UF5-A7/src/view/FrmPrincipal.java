@@ -432,7 +432,7 @@ public class FrmPrincipal extends JFrame {
 	 * 
 	 * @param missatge
 	 */
-	protected void missatgeError(String missatge) {
+	public void missatgeError(String missatge) {
 		JOptionPane.showMessageDialog(this, missatge, "Error",
 				JOptionPane.ERROR_MESSAGE);
 	}
