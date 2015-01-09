@@ -37,7 +37,7 @@ public class LlistaPersones extends LinkedList<Persona> {
 	/**
 	 * Mètode que retorna la posició on es troba l'últim usuari de la llista
 	 * 
-	 * @return la posició on es troba l'usuari de la llista
+	 * @return retorno la mida de la llista
 	 */
 	public int getUltimaPosicio() {
 		return this.size();
