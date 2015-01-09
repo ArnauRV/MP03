@@ -6,11 +6,13 @@ import java.awt.event.WindowListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 
 import model.LlistaPersones;
 import model.Persona;
@@ -64,11 +66,7 @@ public class Controlador {
 		// Escoltador d'iniciar i tancar el programa
 		WindowListenerIniciarTancar = new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				try {
-					tancarPrograma();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+				tancarPrograma();
 			}
 
 			public void windowOpened(WindowEvent e) {
@@ -267,7 +265,8 @@ public class Controlador {
 	 */
 	private void actualitzarDades() {
 		vista.actualitzaDades(model.usuActual());
-		vista.actualitzarInfoLabel(model.getPosicioActual(), model.size());
+		vista.actualitzarInfoLabel(model.getPosicioActual(),
+				model.getUltimaPosicio());
 	}
 
 	/**
@@ -276,17 +275,37 @@ public class Controlador {
 	 * 
 	 * @throws IOException
 	 */
-	private void tancarPrograma() throws IOException {
-		OutputStream fout = new FileOutputStream("usuaris.csv");
-		OutputStreamWriter out = new OutputStreamWriter(fout, "UTF8");
+	private void tancarPrograma() {
+		OutputStream fout = null;
+		OutputStreamWriter out = null;
+		try {
+			fout = new FileOutputStream("usuaris.csv");
+			out = new OutputStreamWriter(fout, "UTF8");
+			
 
-		for (int i = 0; i < model.size(); i++) {
-			Persona linia = model.get(i);
-			out.write(linia.toString());
-			out.write("\n");
+			for (int i = 0; i < model.size(); i++) {
+				Persona linia = model.get(i);
+				out.write(linia.toString());
+				out.write("\n");
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				out.close();
+				fout.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		out.close();
-		fout.close();
 	}
 
 	/**
@@ -328,14 +347,20 @@ public class Controlador {
 				// Si no hi ha usuaris a l'arxiu, actualitzo el label, dient
 				// que no hi ha registres
 				vista.actualitzarInfoLabel(model.getPosicioActual(),
-						model.size());
+						model.getUltimaPosicio());
 
 				// Desactivo els botons innecessaris
 				vista.desActBotons(false);
 			}
+			
 			br.close();
 			isr.close();
 			fis.close();
+		}
+		else{
+			// Si no existeix el fitxer actualitzo el label amb el text
+			// no hi ha registres
+			vista.actualitzarInfoLabel(0,0);
 		}
 	}
 }

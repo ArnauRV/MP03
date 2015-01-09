@@ -26,12 +26,21 @@ public class LlistaPersones extends ArrayList<Persona> {
 	}
 
 	/**
-	 * Mètode que retorno la posició on es troba l'usuari de la llista
+	 * Mètode que retorna la posició on es troba l'usuari que mostro de la llista
 	 * 
 	 * @return la posició on es troba l'usuari de la llista
 	 */
 	public int getPosicioActual() {
 		return this.persones + 1;
+	}
+	
+	/**
+	 * Mètode que retorna la posició on es troba l'últim usuari de la llista
+	 * 
+	 * @return la posició on es troba l'usuari de la llista
+	 */
+	public int getUltimaPosicio() {
+		return this.size();
 	}
 
 	/**

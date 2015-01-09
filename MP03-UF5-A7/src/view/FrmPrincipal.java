@@ -16,6 +16,7 @@ import javax.swing.JToolBar;
 import javax.swing.border.EmptyBorder;
 
 import model.Persona;
+import java.awt.Toolkit;
 
 public class FrmPrincipal extends JFrame {
 
@@ -42,6 +43,7 @@ public class FrmPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public FrmPrincipal() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Arnau\\Desktop\\images.png"));
 		setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -297,7 +299,7 @@ public class FrmPrincipal extends JFrame {
 			netejaTextFields();
 
 			// Mètode que desactiva els butons
-			desActBotons(false);
+			this.desActBotons(false);
 		}
 	}
 
