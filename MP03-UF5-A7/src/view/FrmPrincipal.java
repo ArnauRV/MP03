@@ -441,7 +441,7 @@ public class FrmPrincipal extends JFrame {
 
 	/**
 	 * Mètode que em pinta un missatge demanant si vull esborrar una persona i
-	 * retorna la resposta de l'usuari
+	 * retorna la resposta de l'usuari (valor del botó que s'ha fet click)
 	 * 
 	 * @return retorno la resposta
 	 */
