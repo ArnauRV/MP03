@@ -1,8 +1,8 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class LlistaPersones extends ArrayList<Persona> {
+public class LlistaPersones extends LinkedList<Persona> {
 	private int persones;
 
 	public LlistaPersones() {
