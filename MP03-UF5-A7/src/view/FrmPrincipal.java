@@ -447,7 +447,7 @@ public class FrmPrincipal extends JFrame {
 	 */
 	public int respostaEsborrar() {
 		return JOptionPane.showOptionDialog(this,
-				"Estàs segur que vols esborrar aquest usuari",
+				"Estàs segur que vols esborrar aquest usuari?",
 				"Esborrar usuari", JOptionPane.OK_CANCEL_OPTION,
 				JOptionPane.QUESTION_MESSAGE, null,
 				new Object[] { "Si", "No" }, "Si");
