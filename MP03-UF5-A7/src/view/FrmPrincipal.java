@@ -43,7 +43,7 @@ public class FrmPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public FrmPrincipal() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Arnau\\git\\MP03\\MP03-UF5-A7\\icona.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icona.png"));
 		setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
