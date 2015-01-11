@@ -261,7 +261,7 @@ public class Controlador {
 	/**
 	 * Mètode que crida el mètode actualitzaDades de la vista que actualitzarà
 	 * els textFields amb les dades de l'usuari. També crida el mètode
-	 * actualitzarInfoLabel de la vista que actualitzarà la informació el label
+	 * actualitzarInfoLabel de la vista que actualitzarà la informació del label
 	 */
 	private void actualitzarDades() {
 		vista.actualitzaDades(model.usuActual());
@@ -281,7 +281,6 @@ public class Controlador {
 		try {
 			fout = new FileOutputStream("usuaris.csv");
 			out = new OutputStreamWriter(fout, "UTF8");
-			
 
 			for (int i = 0; i < model.size(); i++) {
 				Persona linia = model.get(i);
@@ -289,20 +288,16 @@ public class Controlador {
 				out.write("\n");
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
 				out.close();
 				fout.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -352,15 +347,14 @@ public class Controlador {
 				// Desactivo els botons innecessaris
 				vista.desActBotons(false);
 			}
-			
+
 			br.close();
 			isr.close();
 			fis.close();
-		}
-		else{
+		} else {
 			// Si no existeix el fitxer actualitzo el label amb el text
 			// no hi ha registres
-			vista.actualitzarInfoLabel(0,0);
+			vista.actualitzarInfoLabel(0, 0);
 		}
 	}
 }

@@ -43,7 +43,8 @@ public class FrmPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public FrmPrincipal() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Arnau\\Desktop\\images.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				"C:\\Users\\Arnau\\Desktop\\images.png"));
 		setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -289,17 +290,17 @@ public class FrmPrincipal extends JFrame {
 		// Si l'usuari no es null actualitzem les dades dels textFields, sinó
 		// netejo les dades dels textFields i desactivo els butons innecessaris
 		if (usu != null) {
-			tfDNI.setText(usu.getDni());
-			tfNom.setText(usu.getNom());
-			tfCognom1.setText(usu.getCognom1());
-			tfCognom2.setText(usu.getCognom2());
-			tfEdat.setText(Integer.toString(usu.getEdat()));
+			this.tfDNI.setText(usu.getDni());
+			this.tfNom.setText(usu.getNom());
+			this.tfCognom1.setText(usu.getCognom1());
+			this.tfCognom2.setText(usu.getCognom2());
+			this.tfEdat.setText(Integer.toString(usu.getEdat()));
 		} else {
 			// Mètode que neteja els textFields
 			netejaTextFields();
 
 			// Mètode que desactiva els butons
-			this.desActBotons(false);
+			desActBotons(false);
 		}
 	}
 
@@ -440,10 +441,10 @@ public class FrmPrincipal extends JFrame {
 	}
 
 	/**
-	 * Mètode que em pinta un missatge demanant si vull esborrar una persona i
+	 * Mètode que em pinta un missatge, demanant si vull esborrar una persona i
 	 * retorna la resposta de l'usuari (valor del botó que s'ha fet click)
 	 * 
-	 * @return retorno la resposta
+	 * @return retorno la resposta Si = 0; No = 1;
 	 */
 	public int respostaEsborrar() {
 		return JOptionPane.showOptionDialog(this,

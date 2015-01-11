@@ -13,6 +13,8 @@ public class Main {
 			public void run() {
 				try {
 					FrmPrincipal frame = new FrmPrincipal();
+					
+					// Faig que l'aplicació s'obri al centre de la pantalla
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 					Controlador controlador = new Controlador(

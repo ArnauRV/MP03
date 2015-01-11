@@ -18,24 +18,26 @@ public class LlistaPersones extends LinkedList<Persona> {
 	}
 
 	/**
-	 * Mètode que assigno la variable persones a l'última posició de de la
-	 * llista per desplaçar-me a l'última persona
+	 * Mètode que assigno la variable persones a l'última posició de la llista
+	 * per desplaçar-me a l'última persona
 	 */
 	public void ultimLlista() {
 		this.persones = (size() - 1);
 	}
 
 	/**
-	 * Mètode que retorna la posició on es troba l'usuari que mostro de la llista
+	 * Mètode que retorna la posició on es troba l'usuari que mostro de la
+	 * llista per pintar la posició al label de la vista
 	 * 
 	 * @return la posició on es troba l'usuari de la llista
 	 */
 	public int getPosicioActual() {
 		return this.persones + 1;
 	}
-	
+
 	/**
-	 * Mètode que retorna la posició on es troba l'últim usuari de la llista
+	 * Mètode que retorna la posició on es troba l'últim usuari de la llista per
+	 * pintar l'últim usuari disponible de la llista al label
 	 * 
 	 * @return retorno la mida de la llista
 	 */
@@ -57,7 +59,7 @@ public class LlistaPersones extends LinkedList<Persona> {
 
 	/**
 	 * Mètode que resto una posició a la variable persones quan faig clic al
-	 * botó següent.
+	 * botó anterior.
 	 * 
 	 * @throws UnsupportedOperationException
 	 */
